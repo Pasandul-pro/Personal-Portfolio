@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme ===== */
+@theme {
+  --color-bg-primary: #11011C;
+  --color-bg-secondary: #13091d;
+  --color-bg-card: #171721;
+  --color-bg-card-hover: #1c1c2e;
+  --color-accent: #854CE6;
+  --color-accent-light: #a77bef;
+  --color-accent-glow: rgba(133, 76, 230, 0.35);
+  --color-text-primary: #f2f3f4;
+  --color-text-secondary: #b1b2b3;
+  --color-text-muted: #8a8b8c;
+  --color-border-default: rgba(133, 76, 230, 0.2);
+  --color-border-hover: rgba(133, 76, 230, 0.6);
+  --font-family-sans: 'Poppins', sans-serif;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== Cursor blink ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 0.8s infinite;
+}
+
+/* ===== Float animation for hero image ===== */
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float {
+  animation: floatImg 6s ease-in-out infinite;
+}
+
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Fade-in-up for project filter ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ===== Timeline line gradient ===== */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--color-accent), rgba(133, 76, 230, 0.1));
+}
+
+/* ===== Gradient text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-text-primary), var(--color-accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
